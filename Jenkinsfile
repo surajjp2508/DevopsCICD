@@ -7,13 +7,13 @@ agent any
     }
     stage('Code-Compile'){
       steps{
-        sh 'clean install compile'
+        sh 'mvn clean compile'
         echo "Compile Completed"
       }
     }
     stage('Code-Build'){
       steps{
-        sh 'clean install package'
+        sh 'mvn clean package'
         echo "Build Completed"
       }
     }

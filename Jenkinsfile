@@ -22,7 +22,7 @@ agent any
     }
     stage("Run Test cases") {
       when {
-        branch 'development';
+        branch 'development'
       }
       steps {
         sh 'mvn clean test'

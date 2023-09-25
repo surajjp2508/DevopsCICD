@@ -10,7 +10,7 @@ agent any
         when {
           not {
             anyOf {
-              branch 'master';
+              branch 'master'
               branch 'development'
             }
           }

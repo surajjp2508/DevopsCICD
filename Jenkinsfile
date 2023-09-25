@@ -9,7 +9,7 @@ agent any
    stage("Code-Check") {
         when {
           not {
-            anyof {
+            anyOf {
               branch 'master';
               branch 'development';
             }

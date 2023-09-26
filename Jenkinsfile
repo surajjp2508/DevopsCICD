@@ -36,6 +36,10 @@ agent any
         sh 'mvn clean package'
         echo "Build Completed"
       }
+      steps {
+       deploy adapters: [tomcat9(credentialsId: 'Tomcat', path: '', url: 'http://172.17.0.3:8090/')], contextPath: null, war: '**/*.war'
+        echo "Package Deployed to Tomact-Server"
+      }
     }
   }
 }

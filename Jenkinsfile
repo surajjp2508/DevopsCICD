@@ -3,7 +3,7 @@ agent any
   stages{
     stage("checkout-code"){
     steps {
-        git credentialsId: 'e11708a0-d94b-4c7b-8935-41cb820523e9', url: 'https://github.com/surajjp2508/DevopsCICD.git'
+        git branch: 'development', credentialsId: 'e11708a0-d94b-4c7b-8935-41cb820523e9', url: 'https://github.com/surajjp2508/DevopsCICD.git'
     }
    }
    stage("Code-Check") {
@@ -35,8 +35,7 @@ agent any
       steps {
         sh 'mvn clean package'
         echo "Build Completed"
-      }
-      
+      } 
     }
     stage("Build-Deploy") {
       when {

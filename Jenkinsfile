@@ -10,8 +10,8 @@ agent any
         when {
           not {
             anyOf {
-              branch 'master';
-              branch 'development';
+              branch 'master'
+              branch 'development'
             }
           }
         }
@@ -22,7 +22,7 @@ agent any
     }
     stage("Run Test cases") {
       when {
-        branch 'development';
+        branch 'development'
       }
       steps {
         sh 'mvn clean test'
@@ -30,7 +30,7 @@ agent any
     }
     stage("Code-Build") {
       when {
-        branch 'master';
+        branch 'master'
       }
       steps {
         sh 'mvn clean package'
@@ -40,7 +40,7 @@ agent any
     }
     stage("Build-Deploy") {
       when {
-        branch 'master';
+        branch 'master'
       }
       steps {
         deploy adapters: [tomcat9(credentialsId: 'Tomcat', path: '', url: 'http://172.17.0.3:8090/')], contextPath: null, onFailure: false, war: '**/*.war'

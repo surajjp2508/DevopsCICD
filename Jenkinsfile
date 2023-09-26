@@ -3,7 +3,7 @@ agent any
   stages{
     stage("checkout-code"){
     steps {
-        checkout scm
+        git credentialsId: 'e11708a0-d94b-4c7b-8935-41cb820523e9', url: 'https://github.com/surajjp2508/DevopsCICD.git'
     }
    }
    stage("Code-Check") {

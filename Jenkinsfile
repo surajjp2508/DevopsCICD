@@ -10,8 +10,8 @@ agent any
         when {
           not {
             anyOf {
-              branch 'master'
-              branch 'development'
+              branch 'master';
+              branch 'development';
             }
           }
         }
@@ -22,7 +22,7 @@ agent any
     }
     stage("Run Test cases") {
       when {
-        branch 'development'
+        branch 'development';
       }
       steps {
         sh 'mvn clean test'
